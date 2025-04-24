@@ -12,21 +12,14 @@ st.write(
   """
 )
 
-#option = st.selectbox(
- #   "What is your favorite fruit?",
-  #  ("Banana", "Strawberries", "Peaches"),
-#)
-
-#st.write("Your favorite fruit is:", option)
-
 title = st.text_input("Name on your smoothie:")
 st.write("The name on your smoothie will be:", title)
 
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
-#st.dataframe(data=my_dataframe, use_container_width=True)
+
 
 ingredients_list = st.multiselect("Choose upto 5 ingredients:",my_dataframe, max_selections=5)
-#st.write("You selected:", ingrediants_list)
+
 if ingredients_list:
     #st.write(ingredients_list)
     #st.text(ingredients_list)
